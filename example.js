@@ -29,8 +29,77 @@ var myAuxCoins = [{
 	"daemons": [
 		{   //Main daemon instance
 	    	"host": "127.0.0.1",
-	        "port": 23327, // **NOT ACTUAL PORT**
+	        "port": 8332, // **NOT ACTUAL PORT**
 	        "user": "syscoinrpc",
+	        "password": "By66dCmyX44uUbA7P3qqXJQeT3Ywd8dZ4dJdfgxCAxbg"
+	    }
+	],
+},	{
+	"name": "Dogecoin",
+	"symbol": "DOGE",
+	"algorithm": "scrypt",
+
+	/*  */
+	"daemons": [
+		{   //Main daemon instance
+	    	"host": "127.0.0.1",
+	        "port": 22555, // **NOT ACTUAL PORT**
+	        "user": "dogecoinrpc",
+	        "password": "By66dCmyX44uUbA7P3qqXJQeT3Ywd8dZ4dJdfgxCAxbg"
+	    }
+	],
+},	{
+	"name": "Huntercoin",
+	"symbol": "HUC",
+	"algorithm": "scrypt",
+
+	/*  */
+	"daemons": [
+		{   //Main daemon instance
+	    	"host": "127.0.0.1",
+	        "port": 8399, // **NOT ACTUAL PORT**
+	        "user": "huntercoinrpc",
+	        "password": "By66dCmyX44uUbA7P3qqXJQeT3Ywd8dZ4dJdfgxCAxbg"
+	    }
+	],
+	"name": "Sjwcoin",
+	"symbol": "SJW",
+	"algorithm": "scrypt",
+
+	/*  */
+	"daemons": [
+		{   //Main daemon instance
+	    	"host": "127.0.0.1",
+	        "port": 19965, // **NOT ACTUAL PORT**
+	        "user": "sjwcoinrpc",
+	        "password": "By66dCmyX44uUbA7P3qqXJQeT3Ywd8dZ4dJdfgxCAxbg"
+	    }
+	],
+},	{
+	"name": "CanadaeCoin",
+	"symbol": "CDN",
+	"algorithm": "scrypt",
+
+	/*  */
+	"daemons": [
+		{   //Main daemon instance
+	    	"host": "127.0.0.1",
+	        "port": 34430, // **NOT ACTUAL PORT**
+	        "user": "canadaecoinrpc",
+	        "password": "By66dCmyX44uUbA7P3qqXJQeT3Ywd8dZ4dJdfgxCAxbg"
+	    }
+	],
+},	{
+	"name": "Diamondcoin",
+	"symbol": "DMD",
+	"algorithm": "scrypt",
+
+	/*  */
+	"daemons": [
+		{   //Main daemon instance
+	    	"host": "127.0.0.1",
+	        "port": 17772, // **NOT ACTUAL PORT**
+	        "user": "Diamondcoinrpc",
 	        "password": "By66dCmyX44uUbA7P3qqXJQeT3Ywd8dZ4dJdfgxCAxbg"
 	    }
 	],
@@ -163,7 +232,6 @@ var pool = Stratum.createPool({
 });
 
 /*
-
 'data' object contains:
     job: 4, //stratum work job ID
     ip: '71.33.19.37', //ip address of client
@@ -175,17 +243,12 @@ var pool = Stratum.createPool({
     shareDiff: 78, //actual difficulty of the share
     blockDiff: 3349, //block difficulty adjusted for share padding
     blockDiffActual: 3349 //actual difficulty for this block
-
-
     //AKA the block solution - set if block was found
     blockHash: '110c0447171ad819dd181216d5d80f41e9218e25d833a2789cb8ba289a52eee4',
-
     //Exists if "emitInvalidBlockHashes" is set to true
     blockHashInvalid: '110c0447171ad819dd181216d5d80f41e9218e25d833a2789cb8ba289a52eee4'
-
     //txHash is the coinbase transaction hash from the block
     txHash: '41bb22d6cc409f9c0bae2c39cecd2b3e3e1be213754f23d12c5d6d2003d59b1d,
-
     error: 'low share difficulty' //set if share is rejected for some reason
 */
 pool.on('share', function(isValidShare, isValidBlock, data){
